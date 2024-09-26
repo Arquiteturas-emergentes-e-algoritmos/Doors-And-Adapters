@@ -14,5 +14,6 @@
     <ProjectReference Include="..\DoorsAndAdapters.Application\DoorsAndAdapters.Application.csproj" />
     <ProjectReference Include="..\DoorsAndAdapters.Domain\DoorsAndAdapters.Domain.csproj" />
   </ItemGroup>
+	<Itemgrou
 
 </Project>

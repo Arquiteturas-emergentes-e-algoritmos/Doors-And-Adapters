@@ -1,6 +1,6 @@
-﻿namespace DoorsAndAdapters.Domain.Entities;
+﻿namespace DoorsAndAdapters.Domain.ValueObjects;
 
-public class GlucoseTest : Entity
+public class GlucoseTest : ValueObject
 {
     public GlucoseTest(ushort value)
     {

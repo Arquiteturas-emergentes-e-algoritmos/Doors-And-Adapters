@@ -1,19 +1,21 @@
 ﻿using DoorsAndAdapters.Domain.Entities.Interfaces;
+using System.Text.Json.Serialization;
 
-namespace DoorsAndAdapters.Domain.Entities;
+namespace DoorsAndAdapters.Domain.ValueObjects;
 
-public class Medication : Entity
+public class Medication : ValueObject
 {
     public Medication() { }
 
-    public Medication(string name, DateTime time)
+    public Medication(string name, DateTime takeAt)
     {
         Name = name;
-        Time = time;
+        TakeAt = takeAt;
     }
 
     public string Name { get; set; } = string.Empty;
-    public DateTime Time { get; set; } = DateTime.MaxValue;
+    public DateTime TakeAt { get; set; } = DateTime.MaxValue;
+    [JsonIgnore]
     public List<IObserver>? Observers { get; set; } = [];
 
     public void NotifyUsers()

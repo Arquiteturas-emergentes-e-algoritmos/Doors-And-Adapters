@@ -4,11 +4,11 @@ namespace DoorsAndAdapters.Domain.Entities;
 
 public class User : Entity, IObserver
 {
-    public List<MedicationPlan> MedicationPlan { get; set; } = [];
+    public MedicationPlan MedicationPlan { get; set; } = new();
     public Glucometer Glucometer { get; set; } = new();
 
     public void Update()
     {
-        throw new NotImplementedException();
+        return;
     }
 }

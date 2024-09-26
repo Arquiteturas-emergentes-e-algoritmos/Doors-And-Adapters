@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DoorsAndAdapters.Domain\DoorsAndAdapters.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

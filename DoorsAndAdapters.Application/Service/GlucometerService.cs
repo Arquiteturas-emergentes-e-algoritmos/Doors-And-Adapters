@@ -28,7 +28,7 @@ public class GlucometerService(IUserRepository userRepository) : IGlucometerUseC
         userRepository.PatchUser(user);
     }
 
-    public List<GlucoseTest> GetAllTest()
+    public List<GlucoseTest> GetAllTests()
     {
         User? user = userRepository.GetFirstUser();
         return user == null ? [] : user.Glucometer.GlucoseTests;

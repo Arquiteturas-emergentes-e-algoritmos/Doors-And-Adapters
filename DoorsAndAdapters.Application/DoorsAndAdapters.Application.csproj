@@ -9,5 +9,5 @@
   <ItemGroup>
     <ProjectReference Include="..\DoorsAndAdapters.Domain\DoorsAndAdapters.Domain.csproj" />
   </ItemGroup>
-
+	
 </Project>

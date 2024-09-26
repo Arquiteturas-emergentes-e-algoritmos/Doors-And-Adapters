@@ -1,4 +1,4 @@
-﻿using DoorsAndAdapters.Domain.Entities;
+﻿using DoorsAndAdapters.Domain.ValueObjects;
 
 namespace DoorsAndAdapters.Application.UseCases;
 

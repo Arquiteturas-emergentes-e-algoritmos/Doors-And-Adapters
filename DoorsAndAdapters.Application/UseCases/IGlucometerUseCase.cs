@@ -6,6 +6,6 @@ public interface IGlucometerUseCase
 {
     void AddTest(GlucoseTest test);
     void UpdateTest(GlucoseTest test);
-    void DeleteTests(GlucoseTest test);
-    List<GlucoseTest> GetAllTest();
+    void DeleteTest(Guid Id);
+    List<GlucoseTest> GetAllTests();
 }

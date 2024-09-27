@@ -19,12 +19,15 @@ public class MedicationPlanService(IUserRepository userRepository) : IMedication
         userRepository.PatchUser(user);
     }
 
-    public void DeleteMedication(Medication Medication)
+    public void DeleteMedication(Guid Id)
     {
         User? user = userRepository.GetFirstUser();
         if (user == null)
             return;
-        user.MedicationPlan.RemoveMedication(Medication);
+        var medication = user.MedicationPlan.Medications.Find(x => x.Id == Id);
+        if (medication == null)
+            return;
+        user.MedicationPlan.RemoveMedication(medication);
         userRepository.PatchUser(user);
     }
 

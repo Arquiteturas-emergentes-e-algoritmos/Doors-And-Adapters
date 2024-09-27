@@ -19,11 +19,16 @@ public class GlucometerService(IUserRepository userRepository) : IGlucometerUseC
         userRepository.PatchUser(user);
     }
 
-    public void DeleteTest(GlucoseTest test)
+    public void DeleteTest(Guid Id)
     {
         User? user = userRepository.GetFirstUser();
         if (user == null)
             return;
+
+        var test = user.Glucometer.GlucoseTests.Find(x => x.Id == Id);
+        if (test == null)
+            return;
+
         user.Glucometer.DeleteTest(test);
         userRepository.PatchUser(user);
     }

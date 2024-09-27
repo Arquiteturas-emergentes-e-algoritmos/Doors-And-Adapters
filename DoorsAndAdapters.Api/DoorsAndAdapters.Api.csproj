@@ -16,8 +16,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Adapters\Glucometer\" />
-	  <Folder Include="Adapters\MedicationPlan\" />
+	  <Folder Include="Adapters\Glucometer\Interfaces\" />
+	  <Folder Include="Adapters\MedicationPlan\Interfaces\" />
 	</ItemGroup>
 
 	<PropertyGroup>

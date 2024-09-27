@@ -1,3 +1,7 @@
+using Api.Adapters.Glucometer;
+using Api.Adapters.Glucometer.Interfaces;
+using Api.Adapters.MedicationPlan;
+using Api.Adapters.MedicationPlan.Interfaces;
 using DoorsAndAdapters.Application.Repositories;
 using DoorsAndAdapters.Application.Service;
 using DoorsAndAdapters.Application.UseCases;
@@ -18,6 +22,10 @@ builder.Services.AddDbContext<DataContext>(options =>
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IGlucometerUseCase, GlucometerService>();
 builder.Services.AddTransient<IMedicationPlanUseCase, MedicationPlanService>();
+builder.Services.AddTransient<IAddTestAdapter, AddTestAdapter>();
+builder.Services.AddTransient<IUpdateTestAdapter, UpdateTestAdapter>();
+builder.Services.AddTransient<IAddMedicationAdapter, AddMedicationAdapter>();
+builder.Services.AddTransient<IUpdateMedicationAdapter, UpdateMedicationAdapter>();
 
 var app = builder.Build();
 

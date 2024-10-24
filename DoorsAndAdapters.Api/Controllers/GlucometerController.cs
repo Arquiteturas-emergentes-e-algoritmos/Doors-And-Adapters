@@ -7,17 +7,15 @@ namespace Api.Controllers;
 
 [ApiController]
 [Route("/v1/glucometer")]
-public class GlucometerController : MyBaseController
+public class GlucometerController(IGlucometerUseCase glucometerUseCase) : MyBaseController
 {
-    private readonly IGlucometerUseCase _glucometerUseCase;
-
-    public GlucometerController(IGlucometerUseCase glucometerUseCase)
-    {
-        _glucometerUseCase = glucometerUseCase;
-    }
+    private readonly IGlucometerUseCase _glucometerUseCase = glucometerUseCase;
 
     [Route("")]
     [HttpPost]
+    [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status500InternalServerError)]
     public ActionResult<object> PostAddTest([FromBody] IAddTestAdapter adapter)
     {
         try
@@ -36,6 +34,8 @@ public class GlucometerController : MyBaseController
 
     [Route("")]
     [HttpGet]
+    [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status500InternalServerError)]
     public ActionResult<object> GetTests()
     {
         try
@@ -50,6 +50,9 @@ public class GlucometerController : MyBaseController
 
     [Route("{Id}")]
     [HttpPut]
+    [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status500InternalServerError)]
     public ActionResult<object> UpdateTest([FromRoute] string Id,
         [FromBody] IUpdateTestAdapter adapter)
     {
@@ -76,6 +79,9 @@ public class GlucometerController : MyBaseController
 
     [Route("{Id}")]
     [HttpDelete]
+    [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status500InternalServerError)]
     public ActionResult<object> DeleteTest([FromRoute] string Id)
     {
         try

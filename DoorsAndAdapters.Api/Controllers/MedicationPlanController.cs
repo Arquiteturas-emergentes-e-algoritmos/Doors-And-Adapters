@@ -7,17 +7,15 @@ namespace Api.Controllers;
 
 [ApiController]
 [Route("/v1/medication")]
-public class MedicationPlanController : MyBaseController
+public class MedicationPlanController(IMedicationPlanUseCase medicationPlanUseCase) : MyBaseController
 {
-    private readonly IMedicationPlanUseCase _medicationPlanUseCase;
-
-    public MedicationPlanController(IMedicationPlanUseCase medicationPlanUseCase)
-    {
-        this._medicationPlanUseCase = medicationPlanUseCase;
-    }
+    private readonly IMedicationPlanUseCase _medicationPlanUseCase = medicationPlanUseCase;
 
     [Route("")]
     [HttpPost]
+    [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status500InternalServerError)]
     public ActionResult<object> PostAddMedication([FromBody] IAddMedicationAdapter adapter)
     {
         try
@@ -35,6 +33,8 @@ public class MedicationPlanController : MyBaseController
     }
     [Route("")]
     [HttpGet]
+    [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status500InternalServerError)]
     public ActionResult<object> GetMedications()
     {
         try
@@ -49,6 +49,9 @@ public class MedicationPlanController : MyBaseController
 
     [Route("{Id}")]
     [HttpPut]
+    [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status500InternalServerError)]
     public ActionResult<object> UpdateMedication([FromRoute] string Id, [FromBody] IUpdateMedicationAdapter adapter)
     {
         try
@@ -73,6 +76,9 @@ public class MedicationPlanController : MyBaseController
     }
     [Route("{Id}")]
     [HttpDelete]
+    [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(object), StatusCodes.Status500InternalServerError)]
     public ActionResult<object> DeleteMedication([FromRoute] string Id)
     {
         try

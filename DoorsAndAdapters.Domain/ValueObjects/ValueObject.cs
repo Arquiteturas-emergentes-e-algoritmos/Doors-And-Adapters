@@ -1,6 +1,7 @@
-﻿namespace DoorsAndAdapters.Domain.ValueObjects;
+﻿using DoorsAndAdapters.Domain.Entities;
 
-public abstract class ValueObject
+namespace DoorsAndAdapters.Domain.ValueObjects;
+
+public abstract class ValueObject : Entity
 {
-    public Guid Id { get; set; } = Guid.NewGuid();
 }

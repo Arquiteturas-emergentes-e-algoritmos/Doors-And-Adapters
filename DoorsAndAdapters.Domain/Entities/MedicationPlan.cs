@@ -11,10 +11,10 @@ public class MedicationPlan : Entity
     public void AddMedication(Medication m)
     {
         Medications.Add(m);
-        Medications.OrderBy(m => m.TakeAt.TimeOfDay - DateTime.UtcNow.TimeOfDay);
+        _ = Medications.OrderBy(m => m.TakeAt.TimeOfDay - DateTime.UtcNow.TimeOfDay);
     }
 
-    public void RemoveMedication(Medication m) => Medications.Remove(m);
+    public void RemoveMedication(Guid Id) => Medications.RemoveAll(m => m.Id == Id);
 
     public void UpdateMedication(Medication m)
     {
@@ -22,6 +22,6 @@ public class MedicationPlan : Entity
         if (medicationFound == null) return;
         Medications.Remove(medicationFound);
         Medications.Add(m);
-        Medications.OrderBy(t => t.TakeAt.TimeOfDay);
+        _ = Medications.OrderBy(t => t.TakeAt.TimeOfDay);
     }
 }

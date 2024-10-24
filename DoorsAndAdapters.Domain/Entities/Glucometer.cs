@@ -8,9 +8,9 @@ public class Glucometer : Entity
     public void AddTest(GlucoseTest test)
     {
         GlucoseTests.Add(test);
-        GlucoseTests.OrderBy(t => t.Time);
+        _ = GlucoseTests.OrderBy(t => t.Time);
     }
-    public void DeleteTest(GlucoseTest test) => GlucoseTests.Remove(test);
+    public void DeleteTest(Guid Id) => GlucoseTests.RemoveAll(x => x.Id == Id);
 
     public void UpdateTest(GlucoseTest test)
     {
@@ -18,6 +18,6 @@ public class Glucometer : Entity
         if (testFound == null) return;
         GlucoseTests.Remove(testFound);
         GlucoseTests.Add(test);
-        GlucoseTests.OrderBy(t => t.Time);
+        _ = GlucoseTests.OrderBy(t => t.Time);
     }
 }

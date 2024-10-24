@@ -1,9 +1,10 @@
 using Api.Adapters.Interfaces;
+using System.Text.Json.Serialization;
 
 namespace Api.Adapters.Glucometer.Interfaces;
 
 public interface IUpdateTestAdapter : IBaseAdapter
 {
-    public ushort Value { get; set; }
-    public DateTime Time { get; set; }
+    [JsonRequired] public ushort Value { get; set; }
+    [JsonRequired] public DateTime Time { get; set; }
 }

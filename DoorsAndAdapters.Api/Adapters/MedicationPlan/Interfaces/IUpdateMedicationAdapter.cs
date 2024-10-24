@@ -1,9 +1,10 @@
 using Api.Adapters.Interfaces;
+using System.Text.Json.Serialization;
 
 namespace Api.Adapters.MedicationPlan.Interfaces;
 
 public interface IUpdateMedicationAdapter : IBaseAdapter
 {
-    public string Name { get; set; }
-    public DateTime TakeAt { get; set; }
+    [JsonRequired] public string Name { get; set; }
+    [JsonRequired] public DateTime TakeAt { get; set; }
 }

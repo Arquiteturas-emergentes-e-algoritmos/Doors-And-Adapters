@@ -9,10 +9,11 @@ public class UserRepository(DataContext context) : IUserRepository
 {
     private readonly DataContext _context = context;
 
-    public void AddUser(User u)
+    public User AddUser(User u)
     {
         _context.Users.Add(u);
         _context.SaveChanges();
+        return u;
     }
 
     public User? GetFirstUser() => _context.Users.FirstOrDefault();

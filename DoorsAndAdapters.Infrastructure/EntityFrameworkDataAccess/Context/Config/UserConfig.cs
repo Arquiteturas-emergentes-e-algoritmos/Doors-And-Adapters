@@ -8,17 +8,14 @@ public class UserConfig : IEntityTypeConfiguration<User>
 {
     public void Configure(EntityTypeBuilder<User> builder)
     {
-        const string tableName = "Users";
-
         builder.HasKey(x => x.Id);
-
-        builder.OwnsOne(x => x.Glucometer, t =>
+        builder.OwnsOne(u => u.Glucometer, g =>
         {
-            t.OwnsMany(p => p.GlucoseTests);
+            g.OwnsMany(t => t.GlucoseTests);
         });
-        builder.OwnsOne(x => x.MedicationPlan, t =>
+        builder.OwnsOne(u => u.MedicationPlan, m =>
         {
-            t.OwnsMany(p => p.Medications);
+            m.OwnsMany(h => h.Medications);
         });
     }
 }

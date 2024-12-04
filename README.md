@@ -12,7 +12,7 @@ Assim como a Arquitetura Limpa, a Arquitetura Hexagonal surge como uma abordagem
 Tais fenômenos são ilustrados na Figura abaixo:
 
 ![Arquitetura Hexagonal](img/portas.png)  
-*Figura: Arquitetura Hexagonal. Fonte:*  
+*Figura: Arquitetura Hexagonal. Fonte:Alistair Cockburn*  
 
 Ao submeter a aplicação proposta a essa arquitetura e, posteriormente, ao SonarQube, observou-se uma eliminação de duplicação de código, com exceção de alguns problemas de manutenibilidade que foram solucionados. No entanto, uma questão não foi possível de ser resolvida devido a restrições da linguagem utilizada.
 

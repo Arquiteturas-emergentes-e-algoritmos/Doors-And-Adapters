@@ -10,10 +10,10 @@ Assim como a Arquitetura Limpa, a Arquitetura Hexagonal surge como uma abordagem
 
 - **Adaptadores:** Estão presentes em cada porta e conectam cada elemento da aplicação com o mundo externo.
 
-Tais fenômenos são ilustrados na Figura abaixo:
+Tais fenômenos são ilustrados na figura 1:
 
 ![Arquitetura Hexagonal](img/portas.png)  
-*Figura: Arquitetura Hexagonal. Fonte:Alistair Cockburn*  
+*Figura 1: Arquitetura Hexagonal. Fonte:Alistair Cockburn*  
 
 ## 📎 Provas de conceito
 

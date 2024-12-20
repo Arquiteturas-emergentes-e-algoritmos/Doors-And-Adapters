@@ -21,10 +21,23 @@ Ao submeter a aplicação proposta a essa arquitetura e, posteriormente, ao Sona
 
 Algo que chamou a atenção foi a baixa quantidade de linhas de código em comparação com a Arquitetura Limpa, além da facilidade em incorporar novas funcionalidades e testá-las.
 
+# 🪐 SonarQube
+A figura 2 apresenta os dados coletados pelo SonarQube referentes a esta arquitetura.
+
+![Arquitetura Hexagonal](img/SonarDaA.png)  
+*Figura 2: SonarQube. Fonte:Autor*  
+
 ## 📖 Referências
+
+1. Nunkesser, R. (2022). Using Hexagonal Architecture for Mobile Applications. *Proceedings of the Conference on Software Engineering Practices*, 113–120. DOI: [10.5220/0011075100003266](https://doi.org/10.5220/0011075100003266).
+
+2. Cockburn, A. Hexagonal Architecture. *Alistair Cockburn*. Disponível em: [https://alistair.cockburn.us/hexagonal-architecture/](https://alistair.cockburn.us/hexagonal-architecture/).
+
+3. Fowler, M. Microservices Guide. *martinfowler.com*. Disponível em: [https://martinfowler.com/microservices/](https://martinfowler.com/microservices/).
 
 ## 📅 Versionamento
 
 | Versão |    Data    |         Descrição          |  Autor(es)  |
 | :----: | :--------: | :------------------------: | :---------: |
 | `1.0`  | 04/12/2024 | Criação de documento | Kauã |
+| `1.1`  | 19/12/2024 | Adição do sonar e referências | Kauã |

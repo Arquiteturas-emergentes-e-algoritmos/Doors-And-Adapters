@@ -21,7 +21,7 @@ Ao submeter a aplicação proposta a essa arquitetura e, posteriormente, ao Sona
 
 Algo que chamou a atenção foi a baixa quantidade de linhas de código em comparação com a Arquitetura Limpa, além da facilidade em incorporar novas funcionalidades e testá-las.
 
-# 🪐 SonarQube
+## 🪐 SonarQube
 A figura 2 apresenta os dados coletados pelo SonarQube referentes a esta arquitetura.
 
 ![Arquitetura Hexagonal](img/SonarDaA.PNG)  
